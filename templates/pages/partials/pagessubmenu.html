@@ -1,0 +1,14 @@
+{% load base_tags %}
+
+<div class="dropdown-menu" aria-labelledby="{{item__id}}">
+    {% for item in item.child.all %}
+        <a class="dropdown-item" href="">{{item.title}}</a>
+        {% if item.child.all %}
+            {% include 'pages/partials/pagessubmenu.html' %}
+        {% else %}
+            {% include 'pages/partials/menus.html' %}
+        {% endif %}
+    {% endfor %}
+</div>
+
+

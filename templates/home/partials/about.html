@@ -1,0 +1,9 @@
+{% load base_tags %}
+
+<div class="col-md-12 col-sm-12 wow fadeInUp justify" data-wow-delay="0.2s">
+    <div class="about-thumb">
+        <a href="{% url 'menu:detail' about.slug %}" style="text-decoration: none;">
+            <p>{{ about.shortdescription }}</p>
+        </a>
+    </div>
+</div>

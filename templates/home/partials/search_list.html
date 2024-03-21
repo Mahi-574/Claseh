@@ -1,0 +1,42 @@
+{% extends 'home/base.html' %}
+{% load base_tags %}
+
+{% block menu %}
+    {% pagesmenu %}
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-5">
+        <hgroup class="mb20">
+            <h1> نتایج جستجو برای: {{ search }}</h1>
+        </hgroup>
+
+        <section class="col-xs-12 col-sm-6 col-md-12" style="text-align:right;">
+            {% for item in object_list %}
+                <article class="search-result row">
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        <a href="{% url 'home:search_detail' item.slug %}?strSearch={{ search }}" target="_blank"
+                           title="{{ item.title }}" class="thumbnail"><img src="{{ item.thumbnail.url }}"
+                                                                           alt="{{ item.title }}"/></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+                        <h3><a href="{% url 'home:search_detail' item.slug %}?strSearch={{ search }}" target="_blank"
+                               title="">{{ item.title }}</a></h3>
+                        <p>{{ item.shortdescription | truncatewords:30 }}</p>
+                        <span class="plus"><a href="{% url 'home:search_detail' item.slug %}?strSearch={{ search }}"
+                                              target="_blank"
+                                              title="{{ item.title }}"><i
+                                class="fa fa-plus"></i></a></span>
+                    </div>
+                    <span class="clearfix borda"></span>
+                </article>
+
+            {% endfor %}
+            {% if not object_list %}
+                <p> متاسفانه متناسب با کلمه مورد جستجوی شما محتوایی برای نمایش وجد نداشت.</p>
+            {% endif %}
+
+        </section>
+    </div>
+
+{% endblock %}

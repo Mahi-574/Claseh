@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+{% load base_tags %}
+
+{% block menu %}
+    {% pagesmenu %}
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center detail-title">
+                <div>
+                    <h1>{{ object.title }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row detail-body" id="about">
+            {{ object.description | safe }}
+            {% if object.slug == "contact" %}
+                <div class="contact-detail">
+                    {% contactform %}
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+{% endblock %}

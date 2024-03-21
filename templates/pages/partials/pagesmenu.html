@@ -1,0 +1,21 @@
+{% load base_tags %}
+{#ftco-nav#}
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="navbar-nav">
+        <li class="nav-item"><a href="/" class="nav-link">صفحه اصلی</a></li>
+        {% for item in category %}
+            {% if item.parent == None %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="#" id="{{ item__id }}" data-bs-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">{{ item.title }}</a>
+                    {% if item.child.all %}
+                        {% include 'pages/partials/pagessubmenu.html' %}
+                    {% else %}
+                        {% include 'pages/partials/menus.html' %}
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

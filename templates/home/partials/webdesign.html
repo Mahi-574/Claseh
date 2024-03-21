@@ -1,0 +1,16 @@
+{% load base_tags %}
+
+<ul class="grid cs-style-4">
+    {% for item in webdesigns %}
+        <li class="col-md-4">
+            <figure>
+                <div><img src="{{ item.thumbnail.url }}" alt="{{ item.title }}" class="img-responsive"></div>
+                <figcaption>
+                    <h1>{{ item.title }}</h1>
+                    <small>{{ item.shortdescription }}</small>
+                    <a href="{% url 'menu:detail' item.slug %}" target="_top, _blank">جزئیات</a>
+                </figcaption>
+            </figure>
+        </li>
+    {% endfor %}
+</ul>

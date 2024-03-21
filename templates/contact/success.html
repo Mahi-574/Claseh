@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+{% load base_tags %}
+
+{% block menu %}
+    {% pagesmenu %}
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center detail-title">
+                <div class="section-title">
+                    <h1>با تشکر از تماس شما با تیم کلاسه</h1>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row detail-body" id="about">
+            اطلاعات تماس و پیام شما با موفقیت ارسال گردید. تیم کلاسه پس از بررسی پیامتان با شما تماس خواهد گرفت.
+
+        <div>
+            <a href="/" style="text-decoration: none; float: left; background-color: gray; margin: 5px; color: white">
+                بازگشت به صفحه اصلی
+            </a>
+        </div>
+            </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% load base_tags %}
+{% load widget_tweaks %}
+
+
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <form action="/contact/" id="contactForm" method="post">{% csrf_token %}
+            <div class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder=" * نام" name="name" id="name" required>
+                        <span class="help-block text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder=" * آدرس ایمیل " name="email" id="email" required>
+                        <span class="help-block text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder=" * متن پیام " name="message" id="message" required></textarea>
+                        <span class="help-block text-danger"></span>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            {% if form.non_field_errors %}
+                {% for erorr in form.non_field_errors %}
+                    <p>{{ erorr }}</p>
+                {% endfor %}
+            {% endif %}
+            {% if form.name.errors %}
+                {% for error in form.name.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div id="success"></div>
+                    <button type="submit" class="btn sub">ارسال پیام</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+

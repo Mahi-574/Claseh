@@ -1,0 +1,11 @@
+{% load base_tags %}
+
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <div class="section-title">
+            <h2>{{ contact.title }}</h2>
+            <p>{{ contact.description | safe }}</p>
+        </div>
+    </div>
+    {% contactform %}
+</div>

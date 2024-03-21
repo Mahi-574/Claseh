@@ -1,0 +1,84 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load base_tags %}
+
+{% block main %}
+
+<section id="نمونه کارها">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <h2>نمونه کارها</h2>
+                    <p>نمونه کارهای ما بهترین روش برای نشان دادن شیوه عملکرد ما میباشد، شما می توانید در این بخش نمونه
+                        کارهای ما را
+                        ببینید و آنها را بررسی کنید.
+                        قطعا آنچه را که بدنبال آن هستید، پیدا خواهید کرد.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-0-gutter">
+            {% portfolio %}
+        </div>
+
+    </div><!-- container -->
+</section>
+
+<section id="درباره ما">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <h2>درباره ما</h2>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row" id="about">
+            {% about %}
+        </div>
+
+    </div>
+    <!-- /.container -->
+</section>
+
+<section id="خدمات ما">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <h2>خدمات ما</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% services %}
+        </div>
+    </div>
+</section>
+
+<section id="طراحی سایت">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <h2>طراحی سایت</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% webdesign %}
+        </div>
+    </div>
+</section>
+
+<section id="تماس با ما">
+    <div id="contact">
+        <div class="container">
+            {% contact %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

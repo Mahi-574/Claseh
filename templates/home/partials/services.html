@@ -1,0 +1,19 @@
+{% load base_tags %}
+
+{% for item in service %}
+    <div class="col-md-4">
+        <div class="team-item">
+            <div class="team-image">
+                <a href="" target="_top, _blank">
+                    <img src="{{ item.thumbnail.url }}" class="img-responsive" alt="Service">
+                </a>
+            </div>
+            <div class="team-text">
+                <a href="{% url 'menu:detail' item.slug %}" target="_top, _blank">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.shortdescription }}</p>
+                    </a>
+            </div>
+        </div>
+    </div>
+{% endfor %}

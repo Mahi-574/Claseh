@@ -1,0 +1,16 @@
+{% load base_tags %}
+
+{% for port in portfolios %}
+    <div class="col-md-6 col-0-gutter">
+        <div class="ot-portfolio-item">
+            <figure class="effect-bubba">
+                <img class="img-responsive with100" src="{{ port.thumbnail.url }}" alt={{ port.title }} />
+                <figcaption>
+                    <h2>{{ port.title }}</h2>
+                    <p>طراحی سایت کلاسه</p>
+                    <a href="http://{{ port.url }}" target="_blank">موارد بیشتر</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+{% endfor %}

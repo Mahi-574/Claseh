@@ -1,0 +1,14 @@
+{% load base_tags %}
+
+<div class="collapse navbar-collapse col-lg-6 col-md-6" id="bs-example-navbar-collapse-1" >
+    <ul class="nav navbar-nav navbar-right">
+        <li class="hidden">
+            <a href="#page-top"></a>
+        </li>
+        {% for item in menus %}
+            <li class="nav-item">
+                <a class="page-scroll" href="#{{ item.title }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
